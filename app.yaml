@@ -1,0 +1,21 @@
+application: gaelog
+version: 2
+runtime: python27
+threadsafe: true
+api_version: 1
+
+builtins:
+- remote_api: on
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^bkp/.*$
+- ^data/.*$
+
+handlers:
+- url: /api/action/.*
+  script: action.app
